@@ -1,5 +1,10 @@
+import Logo from "../components/Logo";
 const Header = () => {
-  return <h1>This is Header</h1>;
+  return (
+    <header className="">
+     <Logo />
+    </header>
+  );
 };
 
 export default Header;
