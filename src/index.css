@@ -4,10 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-dark-blue;
-    @apply text-white;
-    @apply font-roboto;
-    @apply flex flex-col;
-    @apply items-center;
+    @apply bg-dark-blue text-white font-roboto flex flex-col items-center;
   }
 }

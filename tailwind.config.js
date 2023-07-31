@@ -10,6 +10,8 @@ module.exports = {
       "turquoise-100": "#55aaee",
       "light-turquoise": "#85b9e4",
       "pale-turquoise": "#f1fbfd",
+      "black": "#000000",
+      "gery": "#808080"
     },
     fontFamily: {
       readexPro: ["Readex Pro", "sans-serif"],

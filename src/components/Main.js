@@ -1,5 +1,5 @@
 import WelcomeMessage from "./Main_Components/WelcomeMessage";
-import PasswordGenerator from "./Main_Components/PasswordGenerator";
+import PasswordGenApp from "./Main_Components/PasswordGenApp";
 import About from "./Main_Components/About";
 
 const Main = () => {
@@ -7,7 +7,7 @@ const Main = () => {
     <main className="h-full flex flex-col justify-evenly mt-10 md:mt-20">
       <div className="flex flex-col-reverse items-center md:flex-row md:justify-around md:mb-16">
         <WelcomeMessage />
-        <PasswordGenerator />
+        <PasswordGenApp />
       </div>
       <div>
       <About />
