@@ -10,9 +10,8 @@ const Main = () => {
         <PasswordGenApp />
       </div>
       <div>
-      <About />
+        <About />
       </div>
-      
     </main>
   );
 };
