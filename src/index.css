@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-dark-blue text-white font-roboto flex flex-col items-center w-screen;
+    @apply bg-dark-blue text-white font-roboto;
   }
 }

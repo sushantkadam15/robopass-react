@@ -4,10 +4,10 @@ import About from "./Main_Components/About";
 
 const Main = () => {
   return (
-    <main className="h-full flex flex-col justify-evenly mt-10 md:mt-20">
-      <div className="flex flex-col-reverse items-center md:flex-row md:justify-around md:mb-16">
+    <main >
+      <div className="flex flex-col-reverse md:flex-row  items-center md:items-start ">
         <WelcomeMessage />
-        <PasswordGenApp />
+        <PasswordGenApp  />
       </div>
       <div>
         <About />

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className = "flex flex-col min-h-fit justify-between w-screen min-w-fit max-w-[1500px] px-5 py-1">
+    <div className = " w-11/12 min-w-[310px] max-w-full  md:min-w-[1000px] min-h-screen flex  flex-col justify-between mx-auto px-5 ">
       <Header />
       <Main />
       <Footer />
