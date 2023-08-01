@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopyOutlined";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { simplePassword, strongPassword } from "./PasswordGeneratorFunction";
 
 const PasswordGenApp = () => {
@@ -19,6 +20,7 @@ const PasswordGenApp = () => {
   // State to hold the generated password and index of the current message
   const [password, setPassword] = useState(simplePassword(6, 10));
   const [messageIndex, setMessageIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   // Handles the change in the input box form the user and sets the value of the password to that input
   const handleChange = (event) => {
@@ -28,11 +30,13 @@ const PasswordGenApp = () => {
   // Enables copy functionality for the displayed password
   const passwordCopy = () => {
     navigator.clipboard.writeText(password);
+    setCopied(true);
   };
 
   // Generates a new password with the specified strength and updates the message
   const newPasswordGenerator = (passwordStrength, minLength, maxLength) => {
     setPassword(passwordStrength(minLength, maxLength));
+    setCopied(false);
   };
 
   // Generates a new message each time buttons are clicked based on the messageList array
@@ -46,7 +50,7 @@ const PasswordGenApp = () => {
   return (
     <div className="my-16 md:my-0 md:w-3/5 md:flex md:justify-center">
       <div className="min-w-[320px] max-w-[350px] h-80 bg-pale-turquoise rounded-2xl flex flex-col justify-around items-center">
-         {/* Messages Display area */}
+        {/* Messages Display area */}
         <div className="text-dark-blue text-xs my-3">
           {messageList[messageIndex]}
         </div>
@@ -60,10 +64,14 @@ const PasswordGenApp = () => {
           ></input>
           {/* Password Copy button */}
           <div
-            className="relative bottom-3/4 left-[210px] text-gery hover:text-dark-blue active:text-[#008000]"
+            className={`relative bottom-3/4 left-[210px] ] ${
+              copied === true
+                ? "text-[#4BB543] hover:text-[#4BB543] "
+                : "text-gery hover:text-dark-blue "
+            }`}
             onClick={passwordCopy}
           >
-            <ContentCopyIcon />
+            {copied === true ? <CheckCircleOutlineIcon /> : <ContentCopyIcon />}
           </div>
         </div>
         <div className="flex justify-around mb-5">
