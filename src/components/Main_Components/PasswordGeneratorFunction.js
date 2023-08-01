@@ -37,7 +37,7 @@ const capitalizeFirstLetter = (str) => {
 const simplePassword = (minLength, maxLength) => {
   const randomNumber = Math.floor(Math.random() * 100) + 1;
   const specialCharacter =
-    specialCharacters[Math.floor(Math.random() * specialCharacters.length) + 1];
+    specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
   let password = passwordStringGenerator(minLength, maxLength);
   password = capitalizeFirstLetter(password) + randomNumber + specialCharacter;
   return password;
