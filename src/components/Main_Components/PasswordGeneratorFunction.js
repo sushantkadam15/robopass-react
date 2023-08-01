@@ -8,16 +8,20 @@ const specialCharacters = jsonData.specialCharacters;
 
 // Combines two words from the 'words' array and returns the resulting string within the specified length range.
 const passwordStringGenerator = (minLength, maxLength) => {
-  // Function to generate a random index between 1 and the length of 'words' array.
-  const randomIndex = () => Math.floor(Math.random() * words.length) + 1;
+  // Function to generate a random index between 0 and the length of 'words' array (exclusive).
+  const randomIndex = () => Math.floor(Math.random() * words.length);
 
   // Function to get two random words and concatenate them.
   const randomWords = () => words[randomIndex()] + words[randomIndex()];
 
+  // Generate the password string.
   let passwordString = randomWords();
 
   // Loop to ensure the password length is within the specified range.
-  while (passwordString.length <= minLength || passwordString.length >= maxLength) {
+  while (
+    passwordString.length < minLength ||
+    passwordString.length > maxLength
+  ) {
     passwordString = randomWords();
   }
 
@@ -35,8 +39,7 @@ const simplePassword = (minLength, maxLength) => {
   const specialCharacter =
     specialCharacters[Math.floor(Math.random() * specialCharacters.length) + 1];
   let password = passwordStringGenerator(minLength, maxLength);
-  password =
-    capitalizeFirstLetter(password) + randomNumber + specialCharacter;
+  password = capitalizeFirstLetter(password) + randomNumber + specialCharacter;
   return password;
 };
 
