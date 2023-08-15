@@ -48,7 +48,7 @@ const PasswordGenApp = () => {
     );
 
   return (
-    <div className="my-16 md:my-0 md:w-3/5 md:flex md:justify-center">
+    <div className=" flex justify-center mb-24">
       <div className="min-w-[320px] max-w-[350px] h-80 bg-pale-turquoise rounded-2xl flex flex-col justify-around items-center">
         {/* Messages Display area */}
         <div className="text-dark-blue text-xs my-3">

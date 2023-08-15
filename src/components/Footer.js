@@ -1,20 +1,37 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
+// Footer component to display social media links and creator information
 const Footer = () => {
   return (
-    <footer className=" mt-10 h-20 flex flex-col justify-around  items-center text-xs border-t py-2 md:flex-row">
-      <div className="mt-2 md:mt-0">
-        <a href="https://www.linkedin.com/in/sushant-p-kadam/">
-          <LinkedInIcon className="mx-2" />
+    <footer>
+      {/* Container for the footer content */}
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+
+        {/* Logo */}
+        <a class="flex title-font font-medium items-center md:justify-start justify-center ">
+          <span class="ml-3 text-l">
+            Robo<span className=" text-turquoise">Pass</span>
+          </span>
         </a>
-        <a href="https://github.com/sushantkadam15">
-          <GitHubIcon className="mx-2" />
-        </a>
-      </div>
-      <div className=" tracking-wide">
-        Created with ❤️ by{" "}
-        <span className=" text-turquoise">Sushant Kadam</span>
+
+        {/* Creator Information */}
+        <p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          Created with ❤️ by
+          <span class="ml-1 text-turquoise">Sushant Kadam</span>
+        </p>
+
+        {/* Social Media Links */}
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          {/* LinkedIn Profile */}
+          <a class="ml-3" href="https://www.linkedin.com/in/sushant-p-kadam/">
+            <LinkedInIcon />
+          </a>
+          {/* GitHub Profile */}
+          <a href="https://github.com/sushantkadam15">
+            <GitHubIcon className="mx-2 w-5 h-5" />
+          </a>
+        </span>
       </div>
     </footer>
   );
