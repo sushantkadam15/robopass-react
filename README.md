@@ -40,20 +40,19 @@ Follow these steps to get started with the project:
 
 1. Clone the repository: `git clone https://github.com/sushantkadam15/robopass-react.git`
 2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+3. Start the development server: `npm start
 
 ## Technologies Used
 
-- React.js: Frontend library for building the user interface.
-- Tailwind CSS: Utility-first CSS framework for styling the user interface.
-- Material-UI: Provides ready-to-use UI components and icons.
-- JavaScript: Programming language used for functionality.
+- React.js
+- Tailwind CSS
+- JavaScript
 - JSON: Stores words and special characters used for password generation.
 
 ## How to Use
 
-1. Visit the live demo [https://robopass.netlify.app/](link_to_live_demo).
-2. Click on "Another Simple Password" or "Another Strong Password" buttons to generate passwords of different strengths.
+1. Visit the live demo.
+2. Click on the "Another Simple Password" or "Another Strong Password" buttons to generate passwords of different strengths.
 3. Copy the generated password using the copy icon and use it to secure your online accounts.
 
 ## Contact
