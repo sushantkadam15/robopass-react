@@ -32,7 +32,7 @@ This project was inspired by "DynoPass," another password generator app with sim
 
 ![RoboPass Demo](https://robopass.netlify.app/static/media/logo.620ebac3a06605992961.png)
 
-Check out the live demo of RoboPass [https://robopass.netlify.app/](link_to_live_demo).
+Check out the live demo of RoboPass [Click Here](https://robopass.sushantk.com/).
 
 ## Getting Started
 
