@@ -1,10 +1,10 @@
 # 🤖 RoboPass - Password Generator App
 
-![RoboPass Logo](https://robopass.netlify.app/static/media/logo.620ebac3a06605992961.png)
+![RoboPass Logo](https://robopass.sushantk.com/static/media/logo.620ebac3a06605992961.png)
 
 RoboPass is a password generator app that I built using React. It creates strong, unique passwords to help keep your online accounts secure. With rising concerns about internet security, having tough passwords is crucial these days.
 
-I made RoboPass to show off my React skills and passion for web development. My goal is to give users a simple tool to make more secure passwords.
+I made RoboPass to show off my React skills and passion for web development. I aim to give users a simple tool to make more secure passwords.
 
 ## Table of Contents
 
