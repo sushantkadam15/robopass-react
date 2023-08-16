@@ -8,18 +8,18 @@ I made RoboPass to show off my React skills and passion for web development. I a
 
 ## Table of Contents
 
-- [Inspiration](#Inspiration)
+
 - [Features](#features)
 - [Demo](#demo)
 - [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
 - [How to Use](#how-to-use)
+- [Acknowledgement](#Acknowledgement)
 - [Contact](#contact)
 
 
-## Inspiration
 
-This project was inspired by "DynoPass," another password generator app with similar features. I was inspired by their concept and functionality, and I decided to create my own version called "RoboPass."
+
 
 ## Features
 
@@ -29,8 +29,6 @@ This project was inspired by "DynoPass," another password generator app with sim
 - User-friendly interface and easy-to-use controls.
 
 ## Demo
-
-![RoboPass Demo](https://robopass.netlify.app/static/media/logo.620ebac3a06605992961.png)
 
 Check out the live demo of RoboPass [Click Here](https://robopass.sushantk.com/).
 
@@ -54,6 +52,10 @@ Follow these steps to get started with the project:
 1. Visit the live demo.
 2. Click on the "Another Simple Password" or "Another Strong Password" buttons to generate passwords of different strengths.
 3. Copy the generated password using the copy icon and use it to secure your online accounts.
+
+## Acknowledgement
+
+This project was inspired by "DynoPass," another password generator app with similar features. I was inspired by their concept and functionality, and I decided to create my own version called "RoboPass."
 
 ## Contact
 
