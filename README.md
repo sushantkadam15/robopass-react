@@ -38,7 +38,7 @@ Follow these steps to get started with the project:
 
 1. Clone the repository: `git clone https://github.com/sushantkadam15/robopass-react.git`
 2. Install dependencies: `npm install`
-3. Start the development server: `npm start
+3. Start the development server: `npm start`
 
 ## Technologies Used
 
