@@ -1,63 +1,100 @@
-# 🤖 RoboPass - Password Generator App
+# RoboPass
 
-![RoboPass Logo](https://robopass.sushantk.com/static/media/logo.620ebac3a06605992961.png)
-
-RoboPass is a password generator app that I built using React. It creates strong, unique passwords to help keep your online accounts secure. With rising concerns about internet security, having tough passwords is crucial these days.
-
-I made RoboPass to show off my React skills and passion for web development. I aim to give users a simple tool to make more secure passwords.
-
-## Table of Contents
-
-
-- [Features](#features)
-- [Demo](#demo)
-- [Getting Started](#getting-started)
-- [Technologies Used](#technologies-used)
-- [How to Use](#how-to-use)
-- [Acknowledgement](#Acknowledgement)
-- [Contact](#contact)
-
-
-
-
+A browser-only password generator built with React and Vite. Create a random
+password or a memorable passphrase, customize it, and copy it to your password
+manager. The original RoboPass robot and branding are retained.
 
 ## Features
 
-- Generate simple passwords with a mix of capitalized words, random numbers, and special characters.
-- Generate strong passwords with a mix of uppercase and lowercase letters, digits, and special characters.
-- Customize the length of generated passwords.
-- User-friendly interface and easy-to-use controls.
+- Random passwords from 8–128 characters, defaulting to 20.
+- Select uppercase, lowercase, numbers, and symbols. Every selected type is
+  included. Optionally exclude look-alike characters.
+- Passphrases from 4–10 independently selected words, defaulting to six, using
+  a bundled 7,775-entry dictionary adapted from EFF's Large Wordlist.
+- Hyphen, space, period, and underscore separators.
+- Settings immediately generate a new result; invalid settings clear the result
+  and show an actionable error.
+- Clipboard success is confirmed only after copying succeeds. On failure, the
+  selectable, read-only output remains available for manual copying.
+- Fluid layouts, wrapping output that grows to fit, touch-sized controls,
+  keyboard navigation, visible focus, labeled fields, live status feedback,
+  and support for enlarged text and forced colors.
 
-## Demo
+## Run locally
 
-Check out the live demo of RoboPass [Click Here](https://robopass.sushantk.com/).
+Use Node.js 24 LTS (`.nvmrc`), or a supported Node release satisfying
+`package.json`'s engine requirement.
 
-## Getting Started
+```sh
+nvm install # if you use nvm
+npm ci
+npm start
+```
 
-Follow these steps to get started with the project:
+Vite prints the development URL. No API key, account, database, or backend is
+required. All runtime assets, including the word list, are bundled locally;
+there are no third-party font or analytics requests.
 
-1. Clone the repository: `git clone https://github.com/sushantkadam15/robopass-react.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+## Verify
 
-## Technologies Used
+```sh
+npm run lint
+npm test
+npm run build
+npx playwright install --with-deps chromium firefox webkit
+npm run test:e2e
+```
 
-- React.js
-- Tailwind CSS
-- JavaScript
-- JSON: Stores words and special characters used for password generation.
+The browser suite serves the production build, so run the build command first.
+CI runs these same checks. Browser failures produce screenshots, traces, and
+an HTML report; CI uploads these as artifacts.
 
-## How to Use
+Unit/component coverage includes unbiased random-index rejection, bounded
+failure, all 15 nonempty character-set combinations, lengths and exclusions,
+dictionary integrity, invalid options, missing Web Crypto, settings, and
+clipboard success/failure/races.
 
-1. Visit the live demo.
-2. Click on the "Another Simple Password" or "Another Strong Password" buttons to generate passwords of different strengths.
-3. Copy the generated password using the copy icon and use it to secure your online accounts.
+Browser coverage includes Chromium, Firefox, WebKit, and emulated iPhone,
+Android, and iPad profiles. The desktop engines exercise 18 viewport sizes
+from 240 to 2,560 CSS pixels wide, including phone landscape, tablet sizes,
+and layout breakpoints, using maximum-length passwords and passphrases.
+Checks cover overflow, output clipping, keyboard input, clipboard failures,
+200% text size, browser errors, external requests/storage, and automated
+WCAG A/AA accessibility scans. Device profiles are emulation, not tests on
+physical phones or tablets; automated scans do not replace manual assistive
+technology testing.
 
-## Acknowledgement
+## Generation and privacy
 
-This project was inspired by "DynoPass," another password generator app with similar features. I was inspired by their concept and functionality, and I decided to create my own version called "RoboPass."
+The generator uses `crypto.getRandomValues()` with rejection sampling to avoid
+modulo bias. Random-password candidates are drawn from the selected alphabet
+and accepted only when every selected character type is present. There is no
+predictable suffix or letter-substitution mode. Generation attempts are bounded,
+and unavailable secure randomness produces an error rather than a fallback.
+Passphrase words are sampled independently with replacement; repeated words
+are valid. See [third-party attribution](THIRD_PARTY_NOTICES.md) for the dictionary
+source, license, and normalization details.
 
-## Contact
+Passwords are held in React memory and are not sent to a server, logged, or
+persisted by RoboPass. Refreshing replaces the current result. Copying places
+the value on your device's clipboard. Production hosting should use HTTPS for
+clipboard support. Use a unique password for every account, save it in a
+password manager, and enable multi-factor authentication where available.
 
-For any inquiries or questions, please reach out to Sushant Kadam at [sushantkadam15@gmail.com](mailto:sushantkadam15@gmail.com).
+## Build and deploy
 
+```sh
+npm run build
+npm run preview
+```
+
+Upload the contents of `build/` to static hosting. The output directory is
+unchanged from the previous Create React App setup. Relative asset URLs support
+both domain-root and subdirectory hosting; there is no client-side routing.
+A Git push does not itself confirm that the public site has been deployed.
+
+## Credits
+
+Created by [Sushant Kadam](https://github.com/sushantkadam15), originally inspired
+by DynoPass. Passphrase dictionary adapted from the
+[Electronic Frontier Foundation](https://www.eff.org/dice).
