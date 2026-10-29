@@ -1,6 +1,6 @@
 {
   "short_name": "RoboPass",
-  "name": "RoboPass - Generate Strong and Secure Passwords.",
+  "name": "RoboPass \u2014 Your friendly password generator",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#191833",
+  "background_color": "#191833"
 }
